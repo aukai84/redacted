@@ -1,0 +1,3 @@
+function redactedParser(body) {
+    // body...
+}

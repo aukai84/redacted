@@ -15,10 +15,12 @@ app.set('view engine', 'hbs');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use('/message', (req, res, next) => {
+    req.body.message = redacted(req.body.message);
+    next();
+});
 app.use('/message', message);
 
-app.use('/message', (req, res) => {
-    //console.log(redacted(req.body));
-});
+
 
 module.exports = app;

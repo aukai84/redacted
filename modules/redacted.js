@@ -11,6 +11,8 @@ function redactedParser(message) {
         yolo: "carpe diem"
     };
     let newString = message.replace(/selfie|yummers|outchea|bruh|dodge|cilantro|bae|swag|yolo/gi, (matched) => {
+        console.log(matched);
+        console.log(newWords[matched]);
         return newWords[matched];
     });
     return newString;
